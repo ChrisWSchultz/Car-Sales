@@ -1,13 +1,10 @@
 import React from 'react';
 
-import { removeFeature } from "../actions";
-import {connect} from "react-redux";
-
 const AddedFeature = props => {
 
     const handleClick = (event) => {
         event.preventDefault();
-        console.log(event.target);
+        props.removeFeature(props.feature);
     };
 
   return (
@@ -18,6 +15,4 @@ const AddedFeature = props => {
   );
 };
 
-const mapDispatchToProps = { removeFeature };
-
-export default connect(mapDispatchToProps)(AddedFeature);
+export default AddedFeature;
